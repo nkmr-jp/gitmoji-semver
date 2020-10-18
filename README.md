@@ -53,7 +53,7 @@ $ cat build/dist/gitmojis.yml | yq '.gitmojis[] | select(.name=="sparkles")'
 }
 ```
 
-## Edit gitmoji for your project
+## Edit semver.yml for your project
 
 [./semver.yml](./semver.yml)
 
