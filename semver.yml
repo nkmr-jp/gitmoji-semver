@@ -1,0 +1,4 @@
+semver:
+  major: [ boom ]
+  minor: [ sparkles ]
+  patch: [ bug, ambulance ]
