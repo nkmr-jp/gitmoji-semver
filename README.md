@@ -53,6 +53,28 @@ $ cat build/dist/gitmojis.yml | yq '.gitmojis[] | select(.name=="sparkles")'
 }
 ```
 
+## Show List
+```sh
+$ make list
+  # Major (Breaking)
+  {"emoji":"💥","code":":boom:","desc":"Introduce breaking changes."}
+  
+  # Minor (Feature)
+  {"emoji":"✨","code":":sparkles:","desc":"Introduce new features."}
+  
+  # Patch (Fix)
+  {"emoji":"🐛","code":":bug:","desc":"Fix a bug."}
+  {"emoji":"🚑","code":":ambulance:","desc":"Critical hotfix."}
+  
+  # None
+  {"emoji":"🎨","code":":art:","desc":"Improve structure / format of the code."}
+  {"emoji":"⚡️","code":":zap:","desc":"Improve performance."}
+  {"emoji":"🔥","code":":fire:","desc":"Remove code or files."}
+  {"emoji":"📝","code":":memo:","desc":"Add or update documentation."}
+  {"emoji":"🚀","code":":rocket:","desc":"Deploy stuff."}
+  ...
+```
+
 ## Edit semver.yml for your project
 
 [./semver.yml](./semver.yml)
