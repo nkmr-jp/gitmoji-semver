@@ -33,6 +33,13 @@
 {{/each}}
 {{/if}}
 
+{{#if globe_with_meridians}}
+### 🌐 Internationalization and localization. 
+{{#each globe_with_meridians}}
+- {{> commitTemplate}}
+{{/each}}
+{{/if}}
+
 {{#if bento}}
 ### 🍱 Add or update assets. 
 {{#each bento}}
@@ -47,9 +54,9 @@
 {{/each}}
 {{/if}}
 
-{{#if children-crossing}}
+{{#if children_crossing}}
 ### 🚸 Improve user experience / usability. 
-{{#each children-crossing}}
+{{#each children_crossing}}
 - {{> commitTemplate}}
 {{/each}}
 {{/if}}
@@ -64,6 +71,13 @@
 {{#if egg}}
 ### 🥚 Add or update an easter egg. 
 {{#each egg}}
+- {{> commitTemplate}}
+{{/each}}
+{{/if}}
+
+{{#if triangular_flag_on_post}}
+### 🚩 Add, update, or remove feature flags. 
+{{#each triangular_flag_on_post}}
 - {{> commitTemplate}}
 {{/each}}
 {{/if}}
@@ -103,6 +117,13 @@
 {{/each}}
 {{/if}}
 
+{{#if white_check_mark}}
+### ✅ Add or update tests. 
+{{#each white_check_mark}}
+- {{> commitTemplate}}
+{{/each}}
+{{/if}}
+
 {{#if lock}}
 ### 🔒 Fix security issues. 
 {{#each lock}}
@@ -110,30 +131,30 @@
 {{/each}}
 {{/if}}
 
-{{#if rotating-light}}
+{{#if rotating_light}}
 ### 🚨 Remove linter warnings. 
-{{#each rotating-light}}
+{{#each rotating_light}}
 - {{> commitTemplate}}
 {{/each}}
 {{/if}}
 
-{{#if green-heart}}
+{{#if green_heart}}
 ### 💚 Fix CI Build. 
-{{#each green-heart}}
+{{#each green_heart}}
 - {{> commitTemplate}}
 {{/each}}
 {{/if}}
 
-{{#if arrow-down}}
+{{#if arrow_down}}
 ### ⬇️ Downgrade dependencies. 
-{{#each arrow-down}}
+{{#each arrow_down}}
 - {{> commitTemplate}}
 {{/each}}
 {{/if}}
 
-{{#if arrow-up}}
+{{#if arrow_up}}
 ### ⬆️ Upgrade dependencies. 
-{{#each arrow-up}}
+{{#each arrow_up}}
 - {{> commitTemplate}}
 {{/each}}
 {{/if}}
@@ -145,9 +166,16 @@
 {{/each}}
 {{/if}}
 
-{{#if construction-worker}}
+{{#if construction_worker}}
 ### 👷 Add or update CI build system. 
-{{#each construction-worker}}
+{{#each construction_worker}}
+- {{> commitTemplate}}
+{{/each}}
+{{/if}}
+
+{{#if chart_with_upwards_trend}}
+### 📈 Add or update analytics or track code. 
+{{#each chart_with_upwards_trend}}
 - {{> commitTemplate}}
 {{/each}}
 {{/if}}
@@ -155,6 +183,20 @@
 {{#if recycle}}
 ### ♻️ Refactor code. 
 {{#each recycle}}
+- {{> commitTemplate}}
+{{/each}}
+{{/if}}
+
+{{#if heavy_plus_sign}}
+### ➕ Add a dependency. 
+{{#each heavy_plus_sign}}
+- {{> commitTemplate}}
+{{/each}}
+{{/if}}
+
+{{#if heavy_minus_sign}}
+### ➖ Remove a dependency. 
+{{#each heavy_minus_sign}}
 - {{> commitTemplate}}
 {{/each}}
 {{/if}}
@@ -194,9 +236,23 @@
 {{/each}}
 {{/if}}
 
-{{#if loud-sound}}
+{{#if page_facing_up}}
+### 📄 Add or update license. 
+{{#each page_facing_up}}
+- {{> commitTemplate}}
+{{/each}}
+{{/if}}
+
+{{#if card_file_box}}
+### 🗃 Perform database related changes. 
+{{#each card_file_box}}
+- {{> commitTemplate}}
+{{/each}}
+{{/if}}
+
+{{#if loud_sound}}
 ### 🔊 Add or update logs. 
-{{#each loud-sound}}
+{{#each loud_sound}}
 - {{> commitTemplate}}
 {{/each}}
 {{/if}}
@@ -208,9 +264,9 @@
 {{/each}}
 {{/if}}
 
-{{#if building-construction}}
+{{#if building_construction}}
 ### 🏗 Make architectural changes. 
-{{#each building-construction}}
+{{#each building_construction}}
 - {{> commitTemplate}}
 {{/each}}
 {{/if}}
@@ -229,9 +285,9 @@
 {{/each}}
 {{/if}}
 
-{{#if goal-net}}
+{{#if goal_net}}
 ### 🥅 Catch errors. 
-{{#each goal-net}}
+{{#each goal_net}}
 - {{> commitTemplate}}
 {{/each}}
 {{/if}}
@@ -250,44 +306,9 @@
 {{/each}}
 {{/if}}
 
-{{#if white-check-mark}}
-### ✅ Add or update tests. 
-{{#each white-check-mark}}
-- {{> commitTemplate}}
-{{/each}}
-{{/if}}
-
 {{#if bookmark}}
 ### 🔖 Release / Version tags. 
 {{#each bookmark}}
-- {{> commitTemplate}}
-{{/each}}
-{{/if}}
-
-{{#if chart-with-upwards-trend}}
-### 📈 Add or update analytics or track code. 
-{{#each chart-with-upwards-trend}}
-- {{> commitTemplate}}
-{{/each}}
-{{/if}}
-
-{{#if heavy-plus-sign}}
-### ➕ Add a dependency. 
-{{#each heavy-plus-sign}}
-- {{> commitTemplate}}
-{{/each}}
-{{/if}}
-
-{{#if heavy-minus-sign}}
-### ➖ Remove a dependency. 
-{{#each heavy-minus-sign}}
-- {{> commitTemplate}}
-{{/each}}
-{{/if}}
-
-{{#if globe-with-meridians}}
-### 🌐 Internationalization and localization. 
-{{#each globe-with-meridians}}
 - {{> commitTemplate}}
 {{/each}}
 {{/if}}
@@ -313,16 +334,9 @@
 {{/each}}
 {{/if}}
 
-{{#if twisted-rightwards-arrows}}
+{{#if twisted_rightwards_arrows}}
 ### 🔀 Merge branches. 
-{{#each twisted-rightwards-arrows}}
-- {{> commitTemplate}}
-{{/each}}
-{{/if}}
-
-{{#if page-facing-up}}
-### 📄 Add or update license. 
-{{#each page-facing-up}}
+{{#each twisted_rightwards_arrows}}
 - {{> commitTemplate}}
 {{/each}}
 {{/if}}
@@ -341,44 +355,37 @@
 {{/each}}
 {{/if}}
 
-{{#if speech-balloon}}
+{{#if speech_balloon}}
 ### 💬 Add or update text and literals. 
-{{#each speech-balloon}}
+{{#each speech_balloon}}
 - {{> commitTemplate}}
 {{/each}}
 {{/if}}
 
-{{#if card-file-box}}
-### 🗃 Perform database related changes. 
-{{#each card-file-box}}
-- {{> commitTemplate}}
-{{/each}}
-{{/if}}
-
-{{#if busts-in-silhouette}}
+{{#if busts_in_silhouette}}
 ### 👥 Add or update contributor(s). 
-{{#each busts-in-silhouette}}
+{{#each busts_in_silhouette}}
 - {{> commitTemplate}}
 {{/each}}
 {{/if}}
 
-{{#if clown-face}}
+{{#if clown_face}}
 ### 🤡 Mock things. 
-{{#each clown-face}}
+{{#each clown_face}}
 - {{> commitTemplate}}
 {{/each}}
 {{/if}}
 
-{{#if see-no-evil}}
+{{#if see_no_evil}}
 ### 🙈 Add or update a .gitignore file. 
-{{#each see-no-evil}}
+{{#each see_no_evil}}
 - {{> commitTemplate}}
 {{/each}}
 {{/if}}
 
-{{#if camera-flash}}
+{{#if camera_flash}}
 ### 📸 Add or update snapshots. 
-{{#each camera-flash}}
+{{#each camera_flash}}
 - {{> commitTemplate}}
 {{/each}}
 {{/if}}
@@ -393,13 +400,6 @@
 {{#if seedling}}
 ### 🌱 Add or update seed files. 
 {{#each seedling}}
-- {{> commitTemplate}}
-{{/each}}
-{{/if}}
-
-{{#if triangular-flag-on-post}}
-### 🚩 Add, update, or remove feature flags. 
-{{#each triangular-flag-on-post}}
 - {{> commitTemplate}}
 {{/each}}
 {{/if}}

@@ -35,9 +35,9 @@ function run() {
 
 function buildH3Template(gitmojiObj) {
     return `
-{{#if ${gitmojiObj.name}}}
+{{#if ${gitmojiObj.name.replace(/-/g,'_')}}}
 ### ${gitmojiObj.emoji} ${gitmojiObj.description} 
-{{#each ${gitmojiObj.name}}}
+{{#each ${gitmojiObj.name.replace(/-/g,'_')}}}
 - {{> commitTemplate}}
 {{/each}}
 {{/if}}
