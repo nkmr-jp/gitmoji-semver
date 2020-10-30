@@ -17,13 +17,10 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12
-      - name: Generate Release Note Template
-        working-directory: ./.release
-        run: |
-          npm install
       - name: Release
         working-directory: ./.release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          npm install
           npx semantic-release
