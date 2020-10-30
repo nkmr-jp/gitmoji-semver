@@ -47,6 +47,13 @@
 {{/each}}
 {{/if}}
 
+{{#if children-crossing}}
+### 🚸 Improve user experience / usability. 
+{{#each children-crossing}}
+- {{> commitTemplate}}
+{{/each}}
+{{/if}}
+
 {{#if iphone}}
 ### 📱 Work on responsive design. 
 {{#each iphone}}
@@ -103,9 +110,44 @@
 {{/each}}
 {{/if}}
 
+{{#if rotating-light}}
+### 🚨 Remove linter warnings. 
+{{#each rotating-light}}
+- {{> commitTemplate}}
+{{/each}}
+{{/if}}
+
+{{#if green-heart}}
+### 💚 Fix CI Build. 
+{{#each green-heart}}
+- {{> commitTemplate}}
+{{/each}}
+{{/if}}
+
+{{#if arrow-down}}
+### ⬇️ Downgrade dependencies. 
+{{#each arrow-down}}
+- {{> commitTemplate}}
+{{/each}}
+{{/if}}
+
+{{#if arrow-up}}
+### ⬆️ Upgrade dependencies. 
+{{#each arrow-up}}
+- {{> commitTemplate}}
+{{/each}}
+{{/if}}
+
 {{#if pushpin}}
 ### 📌 Pin dependencies to specific versions. 
 {{#each pushpin}}
+- {{> commitTemplate}}
+{{/each}}
+{{/if}}
+
+{{#if construction-worker}}
+### 👷 Add or update CI build system. 
+{{#each construction-worker}}
 - {{> commitTemplate}}
 {{/each}}
 {{/if}}
@@ -152,9 +194,23 @@
 {{/each}}
 {{/if}}
 
+{{#if loud-sound}}
+### 🔊 Add or update logs. 
+{{#each loud-sound}}
+- {{> commitTemplate}}
+{{/each}}
+{{/if}}
+
 {{#if mute}}
 ### 🔇 Remove logs. 
 {{#each mute}}
+- {{> commitTemplate}}
+{{/each}}
+{{/if}}
+
+{{#if building-construction}}
+### 🏗 Make architectural changes. 
+{{#each building-construction}}
 - {{> commitTemplate}}
 {{/each}}
 {{/if}}
@@ -173,9 +229,9 @@
 {{/each}}
 {{/if}}
 
-{{#if construction}}
-### 🚧 Work in progress. 
-{{#each construction}}
+{{#if goal-net}}
+### 🥅 Catch errors. 
+{{#each goal-net}}
 - {{> commitTemplate}}
 {{/each}}
 {{/if}}
@@ -204,41 +260,6 @@
 {{#if bookmark}}
 ### 🔖 Release / Version tags. 
 {{#each bookmark}}
-- {{> commitTemplate}}
-{{/each}}
-{{/if}}
-
-{{#if rotating-light}}
-### 🚨 Remove linter warnings. 
-{{#each rotating-light}}
-- {{> commitTemplate}}
-{{/each}}
-{{/if}}
-
-{{#if green-heart}}
-### 💚 Fix CI Build. 
-{{#each green-heart}}
-- {{> commitTemplate}}
-{{/each}}
-{{/if}}
-
-{{#if arrow-down}}
-### ⬇️ Downgrade dependencies. 
-{{#each arrow-down}}
-- {{> commitTemplate}}
-{{/each}}
-{{/if}}
-
-{{#if arrow-up}}
-### ⬆️ Upgrade dependencies. 
-{{#each arrow-up}}
-- {{> commitTemplate}}
-{{/each}}
-{{/if}}
-
-{{#if construction-worker}}
-### 👷 Add or update CI build system. 
-{{#each construction-worker}}
 - {{> commitTemplate}}
 {{/each}}
 {{/if}}
@@ -334,30 +355,9 @@
 {{/each}}
 {{/if}}
 
-{{#if loud-sound}}
-### 🔊 Add or update logs. 
-{{#each loud-sound}}
-- {{> commitTemplate}}
-{{/each}}
-{{/if}}
-
 {{#if busts-in-silhouette}}
 ### 👥 Add or update contributor(s). 
 {{#each busts-in-silhouette}}
-- {{> commitTemplate}}
-{{/each}}
-{{/if}}
-
-{{#if children-crossing}}
-### 🚸 Improve user experience / usability. 
-{{#each children-crossing}}
-- {{> commitTemplate}}
-{{/each}}
-{{/if}}
-
-{{#if building-construction}}
-### 🏗 Make architectural changes. 
-{{#each building-construction}}
 - {{> commitTemplate}}
 {{/each}}
 {{/if}}
@@ -400,13 +400,6 @@
 {{#if triangular-flag-on-post}}
 ### 🚩 Add, update, or remove feature flags. 
 {{#each triangular-flag-on-post}}
-- {{> commitTemplate}}
-{{/each}}
-{{/if}}
-
-{{#if goal-net}}
-### 🥅 Catch errors. 
-{{#each goal-net}}
 - {{> commitTemplate}}
 {{/each}}
 {{/if}}

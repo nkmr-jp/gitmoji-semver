@@ -70,5 +70,6 @@ semver:
     - seedling      # Add or update seed files.
     - wastebasket   # Deprecate code that needs to be cleaned up.
 
-  ignore: # hide in changelog
+  # not add in release-template.hbs
+  ignore:
     - construction  # Work in progress.

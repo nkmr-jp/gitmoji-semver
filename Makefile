@@ -61,7 +61,7 @@ gen:
 	@echo
 	@echo
 	@echo "$(PURPLE)# GEN: 3. Generated!$(RESET)"
-	@echo "Generated gitmojis.json and gitmojis.yml whith semver field"
+	@echo "Generated gitmojis.json and gitmojis.yml with semver field"
 	@echo "See ./build/dist"
 
 	@echo
@@ -81,6 +81,8 @@ list:
 	@cat $(GITMOJI_FILE) | jq -c '.gitmojis[] | select(.semver=="patch") | $(FORMAT)'
 	@echo "\n# None"
 	@cat $(GITMOJI_FILE) | jq -c '.gitmojis[] | select(.semver=="none") | $(FORMAT)'
+	@echo "\n# Ignore (Not to be added to the changelog when use semantic-release)"
+	@cat $(GITMOJI_FILE) | jq -c '.gitmojis[] | select(.semver=="ignore") | $(FORMAT)'
 
 scaffold: gen
 	@echo
@@ -92,6 +94,10 @@ scaffold: gen
 	mv $(OUT_DIR)/.release/release.yml $(OUT_DIR)/.github/workflows
 	cp ./build/dist/release-template.hbs $(OUT_DIR)/.release
 	cp ./build/src/semver.json $(OUT_DIR)/.release
+	@echo
+	@echo "$(LIGHTPURPLE)🎉  Add semantic-release setting files$(RESET)"
+	@echo $(OUT_DIR)/.release
+	@echo $(OUT_DIR)/.github/workflows/release.yml
 
 # Short commands
 l: list
