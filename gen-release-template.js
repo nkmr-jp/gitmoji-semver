@@ -5,11 +5,10 @@ const header = `# {{releaseTypeEmoji nextRelease.type}}v{{nextRelease.version}} 
 
 **{{releaseTypeText nextRelease.type}}** ({{nextRelease.type}} version up) - [\`v{{lastRelease.version}}\`...\`v{{nextRelease.version}}\`]({{compareUrl}})
 
-## Changes
 `
 
 function run() {
-    let res = header + "{{#with commits}}\n"
+    let res = header
     let semverObj = {
         major: [],
         minor: [],
@@ -25,11 +24,13 @@ function run() {
         if (key === 'ignore'){
             continue
         }
+        res += `\n{{${key}Header commits}}\n`
+        res += `{{#with commits}}`
         for (const gitmojiObj of semverObj[key]) {
             res += buildH3Template(gitmojiObj)
         }
+        res += "{{/with}}\n"
     }
-    res += "{{/with}}"
     fs.writeFileSync('./build/dist/release-template.hbs', res);
 }
 

@@ -93,6 +93,7 @@ scaffold: gen
 	mkdir -p $(OUT_DIR)/.github $(OUT_DIR)/.github/workflows
 	mv $(OUT_DIR)/.release/release.yml $(OUT_DIR)/.github/workflows
 	cp ./build/dist/release-template.hbs $(OUT_DIR)/.release
+	cp ./build/dist/gitmojis.json $(OUT_DIR)/.release
 	cp ./build/src/semver.json $(OUT_DIR)/.release
 	@echo
 	@echo "$(LIGHTPURPLE)🎉  Add semantic-release setting files$(RESET)"

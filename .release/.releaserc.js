@@ -10,6 +10,7 @@ const templateDir = "./"
 const template = readFileAsync(path.join(templateDir, 'release-template.hbs'))
 const commitTemplate = readFileAsync(path.join(templateDir, 'commit-template.hbs'))
 const semverObj = JSON.parse(fs.readFileSync('./semver.json', 'utf8'));
+const gitmojisObj = JSON.parse(fs.readFileSync('./gitmojis.json', 'utf8'));
 
 const releaseRules = {
     major: convert(semverObj.semver.major),
@@ -57,6 +58,38 @@ const releaseNotes = {
             if (type === 'patch'){
                 return ""
             }
+        },
+        majorHeader: function (commits) {
+            for (const gitmojiObj of gitmojisObj.gitmojis) {
+                if(gitmojiObj.emoji in commits && gitmojiObj.semver==='major'){
+                    return "## Breaking Changes"
+                }
+            }
+            return ""
+        },
+        minorHeader: function (commits) {
+            for (const gitmojiObj of gitmojisObj.gitmojis) {
+                if(gitmojiObj.emoji in commits && gitmojiObj.semver==='minor'){
+                    return "## New Features"
+                }
+            }
+            return ""
+        },
+        patchHeader: function (commits) {
+            for (const gitmojiObj of gitmojisObj.gitmojis) {
+                if(gitmojiObj.emoji in commits && gitmojiObj.semver==='patch'){
+                    return "## Fixes"
+                }
+            }
+            return ""
+        },
+        noneHeader: function (commits) {
+            for (const gitmojiObj of gitmojisObj.gitmojis) {
+                if(gitmojiObj.emoji in commits && gitmojiObj.semver==='none'){
+                    return "## Miscellaneous"
+                }
+            }
+            return ""
         },
     },
     issueResolution: {

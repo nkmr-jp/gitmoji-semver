@@ -2,16 +2,19 @@
 
 **{{releaseTypeText nextRelease.type}}** ({{nextRelease.type}} version up) - [`v{{lastRelease.version}}`...`v{{nextRelease.version}}`]({{compareUrl}})
 
-## Changes
-{{#with commits}}
 
+{{majorHeader commits}}
+{{#with commits}}
 {{#if boom}}
 ### 💥 Introduce breaking changes. 
 {{#each boom}}
 - {{> commitTemplate}}
 {{/each}}
 {{/if}}
+{{/with}}
 
+{{minorHeader commits}}
+{{#with commits}}
 {{#if sparkles}}
 ### ✨ Introduce new features. 
 {{#each sparkles}}
@@ -81,7 +84,10 @@
 - {{> commitTemplate}}
 {{/each}}
 {{/if}}
+{{/with}}
 
+{{patchHeader commits}}
+{{#with commits}}
 {{#if art}}
 ### 🎨 Improve structure / format of the code. 
 {{#each art}}
@@ -291,7 +297,10 @@
 - {{> commitTemplate}}
 {{/each}}
 {{/if}}
+{{/with}}
 
+{{noneHeader commits}}
+{{#with commits}}
 {{#if memo}}
 ### 📝 Add or update documentation. 
 {{#each memo}}
