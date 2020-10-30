@@ -1,5 +1,7 @@
-branches: [ master ]
+# semantic-release setting (when using scaffold)
+branches: [ master, main]
 
+# Emoji semver classification
 semver:
   major:
     - boom      # Introduce breaking changes.

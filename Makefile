@@ -84,10 +84,10 @@ list:
 
 scaffold: gen
 	@echo
-	@echo "$(PURPLE)# SCAFFOLD: Generate semantic-release configs$(RESET)"
-	node gen-template.js
+	@echo "$(PURPLE)# SCAFFOLD: Generate semantic-release setting files$(RESET)"
+	node gen-release-template.js
 	mkdir -p $(OUT_DIR)/.release $(OUT_DIR)/.github $(OUT_DIR)/.github/workflows
-	cp ./semantic-release-template/* $(OUT_DIR)/.release
+	cp -a ./semantic-release-template/. $(OUT_DIR)/.release
 	mkdir -p $(OUT_DIR)/.github $(OUT_DIR)/.github/workflows
 	mv $(OUT_DIR)/.release/release.yml $(OUT_DIR)/.github/workflows
 	cp ./build/dist/release-template.hbs $(OUT_DIR)/.release
