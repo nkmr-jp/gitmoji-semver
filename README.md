@@ -9,13 +9,15 @@ require `curl`, `jq`, `yq` and `node` command.
 
 ```sh
 # Install
-$ brew install curl yq jq
-```
+brew install curl yq jq
 
-```sh
-# Probably works in other versions too. 
-$ node --version
-v13.14.0 
+yq --version
+# yq 2.10.1
+jq --version
+# jq-1.6
+
+node --version
+# v13.14.0 # Probably works in other versions too. 
 ```
 
 ## Install
