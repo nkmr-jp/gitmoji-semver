@@ -1,4 +1,5 @@
 # gitmoji-semver
+
 - A simple script to add the semver field to [gitmojis.json](https://github.com/carloscuesta/gitmoji/blob/master/src/data/gitmojis.json).
 - Generate the files `gitmojis.json` and `gitmojis.yml` with the semver field added.
 - You can easily change the configuration of semver in [./semver.yml](./semver.yml) .

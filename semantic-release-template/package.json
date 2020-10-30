@@ -1,0 +1,9 @@
+{
+  "name": "release",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "semantic-release": "^17.2.1",
+    "semantic-release-gitmoji": "^1.3.4"
+  }
+}
