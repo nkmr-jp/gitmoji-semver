@@ -5,7 +5,7 @@ const semverObj = JSON.parse(fs.readFileSync('./build/src/semver.json', 'utf8'))
 function run() {
     const res = {gitmojis: []};
     for (const v of gitmojisObj.gitmojis) {
-        v.semver = semver(v.name.replace('-','_'))
+        v.semver = semver(v.name.replace(/-/g,'_'))
         res.gitmojis.push(v)
     }
 
