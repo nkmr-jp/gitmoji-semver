@@ -4,7 +4,6 @@
 - Generate the files `gitmojis.json` and `gitmojis.yml` with the semver field added.
 - You can easily change the configuration of semver in [./semver.yml](./semver.yml) .
 
-# Usage
 ## Prepare
 require `curl`, `jq`, `yq` and `node` command.
 
@@ -25,56 +24,12 @@ v13.14.0
 git clone https://github.com/nkmr-jp/gitmoji-semver 
 ```
 
-## Generate
+## Usage
 ```sh
-$ cd ./gitmoi-semver
-$ make gen GITMOJI_VERSION=v3.0.0
+cd ./gitmoji-semver
+make help
 ```
-
-## Check the generated files
-```sh
-$ cat build/dist/gitmojis.json | jq '.gitmojis[] | select(.name=="sparkles")'
-{
-    "emoji": "✨",
-    "entity": "&#x2728;",
-    "code": ":sparkles:",
-    "description": "Introduce new features.",
-    "name": "sparkles",
-    "semver": "minor"
-}
-
-$ cat build/dist/gitmojis.yml | yq '.gitmojis[] | select(.name=="sparkles")'
-{
-  "emoji": "✨",
-  "entity": "&#x2728;",
-  "code": ":sparkles:",
-  "description": "Introduce new features.",
-  "name": "sparkles",
-  "semver": "minor"
-}
-```
-
-## Show List
-```sh
-$ make list
-  # Major (Breaking)
-  {"emoji":"💥","code":":boom:","desc":"Introduce breaking changes."}
-  
-  # Minor (Feature)
-  {"emoji":"✨","code":":sparkles:","desc":"Introduce new features."}
-  
-  # Patch (Fix)
-  {"emoji":"🐛","code":":bug:","desc":"Fix a bug."}
-  {"emoji":"🚑","code":":ambulance:","desc":"Critical hotfix."}
-  
-  # None
-  {"emoji":"🎨","code":":art:","desc":"Improve structure / format of the code."}
-  {"emoji":"⚡️","code":":zap:","desc":"Improve performance."}
-  {"emoji":"🔥","code":":fire:","desc":"Remove code or files."}
-  {"emoji":"📝","code":":memo:","desc":"Add or update documentation."}
-  {"emoji":"🚀","code":":rocket:","desc":"Deploy stuff."}
-  ...
-```
+![image](https://user-images.githubusercontent.com/8490118/97711943-179cc780-1b01-11eb-935f-951956cfb18c.png)
 
 ## Edit semver.yml for your project
 
