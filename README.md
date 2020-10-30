@@ -3,7 +3,8 @@
 - A simple script to add the semver field to [gitmojis.json](https://github.com/carloscuesta/gitmoji/blob/master/src/data/gitmojis.json).
 - Generate the files `gitmojis.json` with the semver field added.
 - You can easily change the configuration of semver in [./semver.yml](./semver.yml) .
-- You can easily set up [semantic-release](https://github.com/semantic-release/semantic-release) and GithubActions to your project. ( It can do Semver Release automatically by just committing with gitmoji. [like this](https://github.com/nkmr-jp/gitmoji-semver/releases) )
+- You can easily set up [semantic-release](https://github.com/semantic-release/semantic-release) and GithubActions to your project. 
+  - It can do Semver Release automatically by just committing with gitmoji. ( [like this](https://github.com/nkmr-jp/gitmoji-semver/releases) )
 
 
 ## Prepare
