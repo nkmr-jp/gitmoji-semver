@@ -1,4 +1,72 @@
+branches: [ master ]
+
 semver:
-  major: [ boom ]
-  minor: [ sparkles ]
-  patch: [ bug, ambulance ]
+  major:
+    - boom      # Introduce breaking changes.
+
+  minor:
+    - sparkles  # Introduce new features.
+    - lipstick  # Add or update the UI and style files.
+    - tada      # Begin a project.
+    - globe_with_meridians  # Internationalization and localization.
+    - bento                 # Add or update assets.
+    - wheelchair            # Improve accessibility.
+    - children_crossing     # Improve user experience / usability.
+    - iphone    # Work on responsive design.
+    - egg       # Add or update an easter egg.
+    - triangular_flag_on_post   # Add, update, or remove feature flags.
+    - dizzy     # Add or update animations and transitions.
+
+  patch:
+    - art   # Improve structure / format of the code.
+    - zap   # Improve performance.
+    - fire  # Remove code or files.
+    - bug   # Fix a bug.
+    - ambulance         # Critical hotfix.
+    - white_check_mark  # Add or update tests.
+    - lock              # Fix security issues.
+    - rotating_light    # Fix compiler / linter warnings.
+    - green_heart       # Fix CI Build.
+    - arrow_down        # Downgrade dependencies.
+    - arrow_up          # Upgrade dependencies.
+    - pushpin           # Pin dependencies to specific versions.
+    - construction_worker       # Add or update CI build system.
+    - chart_with_upwards_trend  # Add or update analytics or track code.
+    - recycle           # Refactor code.
+    - heavy_plus_sign   # Add a dependency.
+    - heavy_minus_sign  # Remove a dependency.
+    - wrench            # Add or update configuration files.
+    - hammer            # Add or update development scripts.
+    - package           # Add or update compiled files or packages.
+    - alien             # Update code due to external API changes.
+    - truck             # Move or rename resources (e.g.: files, paths, routes).
+    - page_facing_up    # Add or update license.
+    - card_file_box     # Perform database related changes.
+    - loud_sound        # Add or update logs.
+    - mute              # Remove logs.
+    - building_construction     # Make architectural changes.
+    - mag       # Improve SEO.
+    - label     # Add or update types.
+    - goal_net  # Catch errors.
+
+  none:
+    - memo      # Add or update documentation.
+    - rocket    # Deploy stuff.
+    - bookmark  # Release / Version tags.
+    - pencil2   # Fix typos.
+    - poop      # Write bad code that needs to be improved.
+    - rewind    # Revert changes.
+    - twisted_rightwards_arrows     # Merge branches.
+    - bulb                  # Add or update comments in source code.
+    - beers                 # Write code drunkenly.
+    - speech_balloon        # Add or update text and literals.
+    - busts_in_silhouette   # Add or update contributor(s).
+    - clown_face    # Mock things.
+    - see_no_evil   # Add or update a .gitignore file.
+    - camera_flash  # Add or update snapshots.
+    - alembic       # Perform experiments.
+    - seedling      # Add or update seed files.
+    - wastebasket   # Deprecate code that needs to be cleaned up.
+
+  ignore: # hide in changelog
+    - construction  # Work in progress.

@@ -1,11 +1,12 @@
 const fs = require('fs');
 const gitmojisObj = JSON.parse(fs.readFileSync('./build/dist/gitmojis.json', 'utf8'));
-const commits = '{{subject}} - ' +
-    '[`{{commit.short}}`](https://github.com/{{owner}}/{{repo}}/commit/{{commit.short}}) ' +
-    '`{{shortDate committerDate}}`'
-const header = '# {{releaseTypeEmoji nextRelease.type}}v{{nextRelease.version}} ({{datetime "UTC:yyyy-mm-dd"}}) ' +
-    '**{{releaseTypeText nextRelease.type}}** ({{nextRelease.type}} version up) - [`v{{lastRelease.version}}`...`v{{nextRelease.version}}`]({{compareUrl}})' +
-    '## Changes'
+
+const header = `# {{releaseTypeEmoji nextRelease.type}}v{{nextRelease.version}} ({{datetime "UTC:yyyy-mm-dd"}})
+
+**{{releaseTypeText nextRelease.type}}** ({{nextRelease.type}} version up) - [\`v{{lastRelease.version}}\`...\`v{{nextRelease.version}}\`]({{compareUrl}})
+
+## Changes
+`
 
 function run() {
     let res = header + "{{#with commits}}\n"
@@ -26,7 +27,7 @@ function run() {
         }
     }
     res += "{{/with}}"
-    fs.writeFileSync('./build/dist/semver-template.hbs', res);
+    fs.writeFileSync('./build/dist/release-template.hbs', res);
 }
 
 function buildH3Template(gitmojiObj) {
@@ -34,7 +35,7 @@ function buildH3Template(gitmojiObj) {
 {{#if ${gitmojiObj.name}}}
 ### ${gitmojiObj.emoji} ${gitmojiObj.description} 
 {{#each ${gitmojiObj.name}}}
-- ${commits}
+- {{> commitTemplate}}
 {{/each}}
 {{/if}}
 `
