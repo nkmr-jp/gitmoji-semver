@@ -22,6 +22,9 @@ function run() {
     }
 
     for (const key of Object.keys(semverObj)) {
+        if (key === 'ignore'){
+            continue
+        }
         for (const gitmojiObj of semverObj[key]) {
             res += buildH3Template(gitmojiObj)
         }
