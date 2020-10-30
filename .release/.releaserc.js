@@ -1,4 +1,4 @@
-// in ".releaserc.js" or "release.config.js"
+// See: https://github.com/momocow/semantic-release-gitmoji
 
 const fs = require('fs');
 const path = require('path')
