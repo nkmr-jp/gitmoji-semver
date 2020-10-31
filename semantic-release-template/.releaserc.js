@@ -70,7 +70,7 @@ const releaseNotes = {
         minorHeader: function (commits) {
             for (const gitmojiObj of gitmojisObj.gitmojis) {
                 if(gitmojiObj.emoji in commits && gitmojiObj.semver==='minor'){
-                    return "## New Features"
+                    return "## Features"
                 }
             }
             return ""
