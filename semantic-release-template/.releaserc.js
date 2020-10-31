@@ -45,7 +45,7 @@ const releaseNotes = {
                 return "Feature Release!"
             }
             if (type === 'patch'){
-                return "Patch Release"
+                return "Fix Release"
             }
         },
         releaseTypeEmoji: function (type) {

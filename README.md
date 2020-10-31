@@ -26,7 +26,7 @@
   - [Step 2: Add `release.yml` to `.github/workflows/`](#step-2-add-releaseyml-to-githubworkflows)
   - [Step 3: Commit and Push](#step-3-commit-and-push)
     - [If you want to run locally](#if-you-want-to-run-locally)
-- [Reference](#reference)
+- [References](#references)
 - [Author](#author)
 - [Show your support](#show-your-support)
 
@@ -36,7 +36,6 @@
 ## Features
 - :smile: A simple script to add the semver field to [gitmojis.json](https://github.com/carloscuesta/gitmoji/blob/master/src/data/gitmojis.json).
     - Generate the files `gitmojis.json` with the semver field added.
-    - I referred to this issue. ( [Add a "semver" field for each emoji #429](https://github.com/carloscuesta/gitmoji/issues/429) )
 - :rocket: You can easily do Semver Release automatically by just committing with gitmoji. ( [like this](https://github.com/nkmr-jp/gitmoji-semver/releases) )
   - Automate versioning and release with GithubActions and [semantic-release](https://github.com/semantic-release/semantic-release).
 
@@ -167,16 +166,14 @@ brew install act
 act -P ubuntu-18.04=nektos/act-environments-ubuntu:18.04 # ※ 16GB docker image
 ```
 
-## Reference
+## References
 
-If you want to customize, please refer to the following document.
-
+- [Add a "semver" field for each emoji #429](https://github.com/carloscuesta/gitmoji/issues/429)
+- [gitmoji | An emoji guide for your commit messages](https://gitmoji.carloscuesta.me/)
 - [GitHub - semantic-release/semantic-release](https://github.com/semantic-release/semantic-release)
 - [GitHub - momocow/semantic-release-gitmoji](https://github.com/momocow/semantic-release-gitmoji)
-- [gitmoji | An emoji guide for your commit messages](https://gitmoji.carloscuesta.me/)
 - [Semantic Versioning 2.0.0 | Semantic Versioning](https://semver.org/)
 - [Introduction to SemVer](https://blog.greenkeeper.io/introduction-to-semver-d272990c44f2)
-- [Add a "semver" field for each emoji #429](https://github.com/carloscuesta/gitmoji/issues/429)
 
 ## Author
 
