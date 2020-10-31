@@ -1,7 +1,7 @@
 # Options
 V=v3.0.0
 GITMOJI_VERSION=$(V)
-F=semver.yml
+F=.semver.yml
 SEMVER_FILE=$(F)
 O=./
 OUT_DIR=$(O)
@@ -37,9 +37,9 @@ help:
 	@echo "    O=<output dir>	$(BLUE)Specify semantic-release setting files output directory$(RESET)"
 	@echo
 	@echo "$(GREEN)Examples:$(RESET)"
-	@echo "    make gen V=v3.0.0 F=./semver.yml"
+	@echo "    make gen V=v3.0.0 F=./.semver.yml"
 	@echo "    make list"
-	@echo "    make scaffold V=v3.0.0 F=./semver.yml O=[your project directory]"
+	@echo "    make scaffold V=v3.0.0 F=./.semver.yml O=./.playground"
 	@echo
 
 # Generate gitmojis.json with semver field
@@ -88,17 +88,14 @@ scaffold: gen
 	@echo
 	@echo "$(PURPLE)# SCAFFOLD: Generate semantic-release setting files$(RESET)"
 	node gen-release-template.js
-	mkdir -p $(OUT_DIR)/.release $(OUT_DIR)/.github $(OUT_DIR)/.github/workflows
+	mkdir -p $(OUT_DIR)/.release
 	cp -a ./semantic-release-template/. $(OUT_DIR)/.release
-	mkdir -p $(OUT_DIR)/.github $(OUT_DIR)/.github/workflows
-	mv $(OUT_DIR)/.release/release.yml $(OUT_DIR)/.github/workflows
 	cp ./build/dist/release-template.hbs $(OUT_DIR)/.release
 	cp ./build/dist/gitmojis.json $(OUT_DIR)/.release
 	cp ./build/src/semver.json $(OUT_DIR)/.release
 	@echo
 	@echo "$(LIGHTPURPLE)🎉  Add semantic-release setting files$(RESET)"
 	@echo $(OUT_DIR)/.release
-	@echo $(OUT_DIR)/.github/workflows/release.yml
 
 # Short commands
 l: list

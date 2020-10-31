@@ -1,7 +1,7 @@
-# semantic-release setting (when using scaffold)
-branches: [ master, main]
+# Release Branches
+branches: [ master, main ]
 
-# Emoji semver classification
+# gitmoji semver settings (default is none)
 semver:
   major:
     - boom      # Introduce breaking changes.
