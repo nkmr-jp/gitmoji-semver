@@ -18,14 +18,14 @@
 <!-- code_chunk_output -->
 
 - [Features](#features)
+- [How to use in Mac](#how-to-use-in-mac)
+  - [Install](#install)
+  - [Usage](#usage)
 - [How to use in GithubActions ( only 3 minutes )](#how-to-use-in-githubactions--only-3-minutes-)
   - [Step 1: Add `.semver.yml` to your Repository root](#step-1-add-semveryml-to-your-repository-root)
   - [Step 2: Add `release.yml` to `.github/workflows/`](#step-2-add-releaseyml-to-githubworkflows)
   - [Step 3: Commit and Push](#step-3-commit-and-push)
     - [If you want to run locally](#if-you-want-to-run-locally)
-- [How to use in Mac](#how-to-use-in-mac)
-  - [Install](#install)
-  - [Usage](#usage)
 - [Reference](#reference)
 - [Author](#author)
 - [Show your support](#show-your-support)
@@ -40,6 +40,33 @@
 - :rocket: You can easily do Semver Release automatically by just committing with gitmoji. ( [like this](https://github.com/nkmr-jp/gitmoji-semver/releases) )
   - Automate versioning and release with GithubActions and [semantic-release](https://github.com/semantic-release/semantic-release).
 
+
+## How to use in Mac
+
+### Install
+Require `curl`, `jq`, `yq` and `node` command.
+
+```sh
+brew install curl yq jq
+
+yq --version
+# yq 2.10.1
+jq --version
+# jq-1.6
+node --version
+# v13.14.0 # Probably works in other versions too.
+
+# Install
+git clone https://github.com/nkmr-jp/gitmoji-semver
+```
+
+### Usage
+```sh
+cd ./gitmoji-semver
+make help
+```
+
+<img src="https://user-images.githubusercontent.com/8490118/97778892-c4d51580-1bbd-11eb-9236-c9c676d4337d.png" width=800>
 
 ## How to use in GithubActions ( only 3 minutes )
 
@@ -138,51 +165,6 @@ There will not be an actual Release. You can see how it works.
 ```sh
 brew install act
 act -P ubuntu-18.04=nektos/act-environments-ubuntu:18.04 # ※ 16GB docker image
-```
-
-## How to use in Mac
-
-You can use various commands. It makes it easy to customize settings.
-
-### Install
-require `curl`, `jq`, `yq` and `node` command.
-
-```sh
-brew install curl yq jq
-
-yq --version
-# yq 2.10.1
-jq --version
-# jq-1.6
-node --version
-# v13.14.0 # Probably works in other versions too.
-
-# Install
-git clone https://github.com/nkmr-jp/gitmoji-semver
-```
-
-### Usage
-```sh
-cd ./gitmoji-semver
-make help
-
-# Usage:
-#     make COMMAND [Options]
-# 
-# Commands:
-#     gen         Generate gitmojis.json with semver field (alias: g)
-#     list        Show generated gitmojis.json (alias: l)
-#     scaffold    Generate semantic-release setting files (alias: s)
-# 
-# Options:
-#     V=<version>         Specify the base gitmoji version
-#     F=<filepath>        Specify semver.yml file path
-#     O=<output dir>      Specify semantic-release setting files output directory
-# 
-# Examples:
-#     make gen V=v3.0.0 F=./semver.yml
-#     make list
-#     make scaffold V=v3.0.0 F=./.semver.yml O=./.playground
 ```
 
 ## Reference

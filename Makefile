@@ -33,7 +33,7 @@ help:
 	@echo
 	@echo "$(GREEN)Options:$(RESET)"
 	@echo "    V=<version>		$(BLUE)Specify the base gitmoji version$(RESET)"
-	@echo "    F=<filepath>	$(BLUE)Specify semver.yml file path$(RESET)"
+	@echo "    F=<filepath>	$(BLUE)Specify .semver.yml file path$(RESET)"
 	@echo "    O=<output dir>	$(BLUE)Specify semantic-release setting files output directory$(RESET)"
 	@echo
 	@echo "$(GREEN)Examples:$(RESET)"
