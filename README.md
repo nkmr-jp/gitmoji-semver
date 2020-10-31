@@ -13,19 +13,40 @@
 </p>
 
 
-> You can do easily Semver Release automatically by just committing with gitmoji.  ( [like this](https://github.com/nkmr-jp/gitmoji-semver/releases) )
- 
-- A simple script to add the semver field to [gitmojis.json](https://github.com/carloscuesta/gitmoji/blob/master/src/data/gitmojis.json).
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Features](#features)
+- [How to use in GithubActions ( only 3 minutes )](#how-to-use-in-githubactions--only-3-minutes-)
+  - [Step 1: Add `.semver.yml` to your Repository root](#step-1-add-semveryml-to-your-repository-root)
+  - [Step 2: Add `release.yml` to `.github/workflows/`](#step-2-add-releaseyml-to-githubworkflows)
+  - [Step 3: Commit and Push](#step-3-commit-and-push)
+    - [If you want to run locally](#if-you-want-to-run-locally)
+- [How to use in Mac](#how-to-use-in-mac)
+  - [Install](#install)
+  - [Usage](#usage)
+- [Reference](#reference)
+- [Author](#author)
+- [Show your support](#show-your-support)
+
+<!-- /code_chunk_output -->
+
+
+## Features
+- :smile: A simple script to add the semver field to [gitmojis.json](https://github.com/carloscuesta/gitmoji/blob/master/src/data/gitmojis.json).
     - Generate the files `gitmojis.json` with the semver field added.
     - I referred to this issue. ( [Add a "semver" field for each emoji #429](https://github.com/carloscuesta/gitmoji/issues/429) )
-- Automate versioning and release with GithubActions and [semantic-release](https://github.com/semantic-release/semantic-release).
+- :rocket: You can easily do Semver Release automatically by just committing with gitmoji. ( [like this](https://github.com/nkmr-jp/gitmoji-semver/releases) )
+  - Automate versioning and release with GithubActions and [semantic-release](https://github.com/semantic-release/semantic-release).
 
-## Run in Github Actions
+
+## How to use in GithubActions ( only 3 minutes )
 
 The following steps will automate versioning and releasing with gitmoji using GithubActions.
-You only need to add two files, and you're ready to go. Feel free to try it out in your own Github repository. (**Estimated time: 3 minutes**)
+You only need to add two files, and you're ready to go. Feel free to try it out in your own Github Repository. 
 
-### Step 1: Create `.semver.yml` to your Repository root
+### Step 1: Add `.semver.yml` to your Repository root
 
 example: [./.semver.yml](.semver.yml)
 
@@ -42,9 +63,10 @@ semver:
   minor:
     - sparkles  # Introduce new features.
   patch:
-    - bug           # Fix a bug.
-    - ambulance     # Critical hotfix.
-    - green_heart   # Fix CI Build.
+    - bug                   # Fix a bug.
+    - ambulance             # Critical hotfix.
+    - green_heart           # Fix CI Build.
+    - construction_worker   # Add or update CI build system.
   none:
     - memo      # Add or update documentation.
 
@@ -53,7 +75,7 @@ semver:
     - construction  # Work in progress.
 ```
 
-### Step 2: Create `release.yml` to `.github/workflows/` 
+### Step 2: Add `release.yml` to `.github/workflows/` 
 
 ```yml
 # .github/workflows/release.yml
@@ -107,18 +129,20 @@ git commit -m ":construction_worker: Add Release settings by https://github.com/
 git push
 ```
 
-Check out the release in your Github Repository.
+:tada: Done! Check out the Release Page in your Github Repository.
 
-### If you want to run locally
+#### If you want to run locally
 
-There will not be an actual Release.You can see how it works.
+There will not be an actual Release. You can see how it works. 
 
 ```sh
 brew install act
 act -P ubuntu-18.04=nektos/act-environments-ubuntu:18.04 # ※ 16GB docker image
 ```
 
-## Run in Mac
+## How to use in Mac
+
+You can use various commands. It makes it easy to customize settings.
 
 ### Install
 require `curl`, `jq`, `yq` and `node` command.
