@@ -65,7 +65,7 @@ cd ./gitmoji-semver
 make help
 ```
 
-<img src="https://user-images.githubusercontent.com/8490118/97778892-c4d51580-1bbd-11eb-9236-c9c676d4337d.png" width=800>
+<img src="img.png" width=800>
 
 ## How to use in GithubActions ( only 3 minutes )
 
@@ -138,7 +138,7 @@ jobs:
       - name: Generate semantic-release configs
         working-directory: ./gitmoji-semver
         run: |
-          make scaffold V=v3.0.0 F=../.semver.yml O=..
+          make scaffold V=v3.0.0 F=../.semver.yml O=.. M=simple
       - name: Release
         working-directory: ./.release
         env:
