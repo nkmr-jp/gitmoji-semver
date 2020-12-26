@@ -36,7 +36,7 @@ function run() {
 
 function buildTemplate(gitmojiObj) {
     if (process.argv[2] === "simple") {
-        return `{{#if ${gitmojiObj.name.replace(/-/g, '_')}}} {{#each ${gitmojiObj.name.replace(/-/g, '_')}}}- {{> commitTemplateSimple}}
+        return `{{#if ${gitmojiObj.name.replace(/-/g, '_')}}} {{#each ${gitmojiObj.name.replace(/-/g, '_')}}}- {{> commitTemplate}}
 {{/each}}{{/if}}`
     } else {
         return `
