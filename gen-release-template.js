@@ -35,8 +35,8 @@ function run() {
 }
 
 function buildH3Template(gitmojiObj) {
-    return `{{#if ${gitmojiObj.name.replace(/-/g,'_')}}} {{#each ${gitmojiObj.name.replace(/-/g,'_')}}}- {{> commitTemplate}}{{/each}}
-{{/if}}`
+    return `{{#if ${gitmojiObj.name.replace(/-/g,'_')}}} {{#each ${gitmojiObj.name.replace(/-/g,'_')}}}- {{> commitTemplate}}
+{{/each}}{{/if}}`
 }
 
 run()
