@@ -22,7 +22,7 @@
 - [How to use in Mac](#how-to-use-in-mac)
   - [Install](#install)
   - [Usage](#usage)
-- [How to auto release ( using GithubActions. only 3 minutes )](#how-to-auto-release-by-githubactions--only-3-minutes-)
+- [How to auto release ( using GithubActions. only 3 minutes )](#how-to-auto-release--using-githubactions-only-3-minutes-)
   - [Step 1: Add `.semver.yml` to your Repository root](#step-1-add-semveryml-to-your-repository-root)
   - [Step 2: Add `release.yml` to `.github/workflows/`](#step-2-add-releaseyml-to-githubworkflows)
   - [Step 3: Commit and Push](#step-3-commit-and-push)
@@ -50,7 +50,7 @@
 ### Install
 
 Require `curl`, `jq`, `yq` and `node` command.
-
+  
 ```sh
 brew install curl yq jq
 
