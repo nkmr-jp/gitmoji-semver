@@ -97,6 +97,11 @@ scaffold: gen
 	cp ./build/dist/release-template.hbs $(OUT_DIR)/.release
 	cp ./build/dist/gitmojis.json $(OUT_DIR)/.release
 	cp ./build/src/semver.json $(OUT_DIR)/.release
+ifeq ($(MODE),simple)
+	cp $(OUT_DIR)/.release/commit-template-simple.hbs $(OUT_DIR)/.release/commit-template.hbs
+else
+	cp $(OUT_DIR)/.release/commit-template-default.hbs $(OUT_DIR)/.release/commit-template.hbs
+endif
 	@echo
 	@echo "$(LIGHTPURPLE)🎉  Add semantic-release setting files$(RESET)"
 	@echo $(OUT_DIR)/.release

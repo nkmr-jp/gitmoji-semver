@@ -8,13 +8,7 @@ const readFileAsync = promisify(require('fs').readFile)
 
 const templateDir = "./"
 const template = readFileAsync(path.join(templateDir, 'release-template.hbs'))
-
-if (process.argv[2] === "simple") {
-    const commitTemplate = readFileAsync(path.join(templateDir, 'commit-template-simple.hbs'))
-}else{
-    const commitTemplate = readFileAsync(path.join(templateDir, 'commit-template.hbs'))
-}
-
+const commitTemplate = readFileAsync(path.join(templateDir, 'commit-template.hbs'))
 const semverObj = JSON.parse(fs.readFileSync('./semver.json', 'utf8'));
 const gitmojisObj = JSON.parse(fs.readFileSync('./gitmojis.json', 'utf8'));
 
