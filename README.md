@@ -35,12 +35,9 @@
 
 ## Features
 
-- :smile: A simple script to add the semver field
-  to [gitmojis.json](https://github.com/carloscuesta/gitmoji/blob/master/src/data/gitmojis.json).
-    - Generate the files `gitmojis.json` with the semver field added.
-- :rocket: You can automatically and easily release by semver (semantic versioning) just by committing with gitmoji. ( [like this](https://github.com/nkmr-jp/gitmoji-semver-sample/releases) )
-    - Automate versioning and release with GithubActions
-      and [semantic-release](https://github.com/semantic-release/semantic-release).
+- :smile: generate [gitmojis.json](https://github.com/carloscuesta/gitmoji/blob/master/src/data/gitmojis.json) with semver field.
+- :smile: generate [semantic-release](https://github.com/semantic-release/semantic-release) setting files and release template.
+- :rocket: auto release by semver (semantic versioning) just by committing with gitmoji. ( [like this](https://github.com/nkmr-jp/gitmoji-semver-sample/releases) )
 
 ### Release template type
 
