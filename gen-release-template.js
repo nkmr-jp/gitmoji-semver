@@ -21,28 +21,33 @@ function run() {
     }
 
     for (const key of Object.keys(semverObj)) {
-        if (key === 'ignore'){
+        if (key === 'ignore') {
             continue
         }
         res += `\n{{${key}Header commits}}\n`
         res += `{{#with commits}}`
         for (const gitmojiObj of semverObj[key]) {
-            res += buildH3Template(gitmojiObj)
+            res += buildTemplate(gitmojiObj)
         }
         res += "{{/with}}\n"
     }
     fs.writeFileSync('./build/dist/release-template.hbs', res);
 }
 
-function buildH3Template(gitmojiObj) {
-    return `
-{{#if ${gitmojiObj.name.replace(/-/g,'_')}}}
+function buildTemplate(gitmojiObj) {
+    if (process.argv[2] === "simple") {
+        return `{{#if ${gitmojiObj.name.replace(/-/g, '_')}}} {{#each ${gitmojiObj.name.replace(/-/g, '_')}}}- {{> commitTemplate}}
+{{/each}}{{/if}}`
+    } else {
+        return `
+{{#if ${gitmojiObj.name.replace(/-/g, '_')}}}
 ### ${gitmojiObj.emoji} ${gitmojiObj.description} 
-{{#each ${gitmojiObj.name.replace(/-/g,'_')}}}
+{{#each ${gitmojiObj.name.replace(/-/g, '_')}}}
 - {{> commitTemplate}}
 {{/each}}
 {{/if}}
 `
+    }
 }
 
 run()

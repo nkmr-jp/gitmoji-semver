@@ -18,6 +18,7 @@
 <!-- code_chunk_output -->
 
 - [Features](#features)
+  - [Release template type](#release-template-type)
 - [How to use in Mac](#how-to-use-in-mac)
   - [Install](#install)
   - [Usage](#usage)
@@ -32,17 +33,22 @@
 
 <!-- /code_chunk_output -->
 
-
 ## Features
-- :smile: A simple script to add the semver field to [gitmojis.json](https://github.com/carloscuesta/gitmoji/blob/master/src/data/gitmojis.json).
-    - Generate the files `gitmojis.json` with the semver field added.
-- :rocket: You can easily do Semver Release automatically by just committing with gitmoji. ( [like this](https://github.com/nkmr-jp/gitmoji-semver/releases) )
-  - Automate versioning and release with GithubActions and [semantic-release](https://github.com/semantic-release/semantic-release).
 
+- :smile: generate [gitmojis.json](https://github.com/carloscuesta/gitmoji/blob/master/src/data/gitmojis.json) with semver field.
+- :smile: generate [semantic-release](https://github.com/semantic-release/semantic-release) setting files and release template.
+- :rocket: auto release by semver (semantic versioning) just by committing with gitmoji. ( [like this](https://github.com/nkmr-jp/gitmoji-semver-sample/releases) )
+
+### Release template type
+
+| [default](https://github.com/nkmr-jp/gitmoji-semver-sample/releases/tag/v2.4.0) | [simple](https://github.com/nkmr-jp/gitmoji-semver-sample/releases/tag/v2.3.0) |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| ![img_2.png](img_2.png)                                                         | ![img_1.png](img_1.png)                                                        |
 
 ## How to use in Mac
 
 ### Install
+
 Require `curl`, `jq`, `yq` and `node` command.
 
 ```sh
@@ -60,17 +66,19 @@ git clone https://github.com/nkmr-jp/gitmoji-semver
 ```
 
 ### Usage
+
 ```sh
 cd ./gitmoji-semver
 make help
 ```
 
-<img src="https://user-images.githubusercontent.com/8490118/97778892-c4d51580-1bbd-11eb-9236-c9c676d4337d.png" width=800>
+<img src="img.png" width=800>
 
 ## How to use in GithubActions ( only 3 minutes )
 
-The following steps will automate versioning and releasing with gitmoji using GithubActions.
-You only need to add two files, and you're ready to go. Feel free to try it out in your own Github Repository. 
+The following steps will automate versioning and releasing with gitmoji using GithubActions. You
+only need to add two files, and you're ready to go. Feel free to try it out in your own Github
+Repository.
 
 ### Step 1: Add `.semver.yml` to your Repository root
 
@@ -101,7 +109,7 @@ semver:
     - construction  # Work in progress.
 ```
 
-### Step 2: Add `release.yml` to `.github/workflows/` 
+### Step 2: Add `release.yml` to `.github/workflows/`
 
 ```yml
 # .github/workflows/release.yml
@@ -138,7 +146,7 @@ jobs:
       - name: Generate semantic-release configs
         working-directory: ./gitmoji-semver
         run: |
-          make scaffold V=v3.0.0 F=../.semver.yml O=..
+          make scaffold V=v3.0.0 F=../.semver.yml O=.. M=simple
       - name: Release
         working-directory: ./.release
         env:
@@ -149,6 +157,7 @@ jobs:
 ```
 
 ### Step 3: Commit and Push
+
 ```sh
 git add .
 git commit -m ":construction_worker: Add Release settings by https://github.com/nkmr-jp/gitmoji-semver"
@@ -159,7 +168,7 @@ git push
 
 #### If you want to run locally
 
-There will not be an actual Release. You can see how it works. 
+There will not be an actual Release. You can see how it works.
 
 ```sh
 brew install act
@@ -179,10 +188,10 @@ act -P ubuntu-18.04=nektos/act-environments-ubuntu:18.04 # ※ 16GB docker image
 
 👤 **nkmr-jp**
 
-
 ## Show your support
 
 Give a ⭐️ if this project helped you!
 
 ***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
+_This README was generated with ❤️
+by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
