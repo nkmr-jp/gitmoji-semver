@@ -142,7 +142,7 @@ jobs:
           yq --version
       - name: Install gitmoji-semver
         run: |
-          git clone https://github.com/nkmr-jp/gitmoji-semver -b v1.6.0
+          git clone https://github.com/nkmr-jp/gitmoji-semver -b v1.7.0
       - name: Generate semantic-release configs
         working-directory: ./gitmoji-semver
         run: |
@@ -160,7 +160,7 @@ jobs:
 
 ```sh
 git add .
-git commit -m ":construction_worker: Add Release settings by https://github.com/nkmr-jp/gitmoji-semver"
+git commit -m ":construction_worker: Add Release workflow"
 git push
 ```
 
