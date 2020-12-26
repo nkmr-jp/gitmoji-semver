@@ -75,7 +75,7 @@ cd ./gitmoji-semver
 make help
 ```
 
-<img src="img.png" width=600>
+<img src="img.png" width=800>
 
 ## How to use in GithubActions ( only 3 minutes )
 
