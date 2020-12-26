@@ -43,7 +43,7 @@
 
 | [default](https://github.com/nkmr-jp/gitmoji-semver-sample/releases/tag/v2.4.0) | [simple](https://github.com/nkmr-jp/gitmoji-semver-sample/releases/tag/v2.3.0) |
 | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| ![img_2.png](img_2.png)                                                         | ![img_1.png](img_1.png)                                                        |
+| ![img.png](https://user-images.githubusercontent.com/8490118/103149917-b831ff80-47b1-11eb-85ac-d0e1328c8ad1.png)                                                         | ![img.png](https://user-images.githubusercontent.com/8490118/103149926-c2ec9480-47b1-11eb-810e-1e75ece3319f.png)                                                        |
 
 ## How to use in Mac
 
@@ -72,7 +72,7 @@ cd ./gitmoji-semver
 make help
 ```
 
-<img src="img.png" width=800>
+<img src="https://user-images.githubusercontent.com/8490118/103149906-93d62300-47b1-11eb-8aec-07db3127ab73.png" width=800>
 
 ## How to use in GithubActions ( only 3 minutes )
 
