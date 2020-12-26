@@ -5,8 +5,8 @@ F=.semver.yml
 SEMVER_FILE=$(F)
 O=./
 OUT_DIR=$(O)
-M=""
-MODE=$(M)
+T=""
+TEMPLATE_TYPE=$(T)
 
 BASE_FILE=https://raw.githubusercontent.com/carloscuesta/gitmoji/$(GITMOJI_VERSION)/src/data/gitmojis.json
 
@@ -37,13 +37,13 @@ help:
 	@echo "    V=<version>		$(BLUE)Specify the base gitmoji version$(RESET)"
 	@echo "    F=<filepath>	$(BLUE)Specify .semver.yml file path$(RESET)"
 	@echo "    O=<output dir>	$(BLUE)Specify semantic-release setting files output directory$(RESET)"
-	@echo "    M=<mode>	$(BLUE)Specify release template MODE 'default or simple'$(RESET)"
+	@echo "    T=<template type>	$(BLUE)Specify release template type 'default or simple'$(RESET)"
 	@echo
 	@echo "$(GREEN)Examples:$(RESET)"
 	@echo "    make gen V=v3.0.0 F=./.semver.yml"
 	@echo "    make list"
 	@echo "    make scaffold V=v3.0.0 F=./.semver.yml O=./.playground"
-	@echo "    make scaffold V=v3.0.0 F=./.semver.yml O=./.playground M=simple"
+	@echo "    make scaffold V=v3.0.0 F=./.semver.yml O=./.playground T=simple"
 	@echo
 
 # Generate gitmojis.json with semver field
@@ -91,13 +91,13 @@ list:
 scaffold: gen
 	@echo
 	@echo "$(PURPLE)# SCAFFOLD: Generate semantic-release setting files$(RESET)"
-	node gen-release-template.js $(MODE)
+	node gen-release-template.js $(TEMPLATE_TYPE)
 	mkdir -p $(OUT_DIR)/.release
 	cp -a ./semantic-release-template/. $(OUT_DIR)/.release
 	cp ./build/dist/release-template.hbs $(OUT_DIR)/.release
 	cp ./build/dist/gitmojis.json $(OUT_DIR)/.release
 	cp ./build/src/semver.json $(OUT_DIR)/.release
-ifeq ($(MODE),simple)
+ifeq ($(TEMPLATE_TYPE),simple)
 	cp $(OUT_DIR)/.release/commit-template-simple.hbs $(OUT_DIR)/.release/commit-template.hbs
 else
 	cp $(OUT_DIR)/.release/commit-template-default.hbs $(OUT_DIR)/.release/commit-template.hbs

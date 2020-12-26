@@ -26,11 +26,11 @@ jobs:
           yq --version
       - name: Install gitmoji-semver
         run: |
-          git clone https://github.com/nkmr-jp/gitmoji-semver -b v1.6.0
+          git clone https://github.com/nkmr-jp/gitmoji-semver -b develop
       - name: Generate semantic-release configs
         working-directory: ./gitmoji-semver
         run: |
-          make scaffold V=v3.0.0 F=../.semver.yml O=..
+          make scaffold V=v3.0.0 F=../.semver.yml O=.. T=simple
       - name: Release
         working-directory: ./.release
         env:
