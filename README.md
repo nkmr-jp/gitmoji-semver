@@ -41,7 +41,7 @@
 
 ### Release template type
 
-| [default](https://github.com/nkmr-jp/gitmoji-semver-sample/releases/tag/v2.4.0) | [simple](https://github.com/nkmr-jp/gitmoji-semver-sample/releases/tag/v2.3.0) |
+| default ([example](https://github.com/nkmr-jp/gitmoji-semver-sample/releases/tag/v2.4.0)) | simple ([example](https://github.com/nkmr-jp/gitmoji-semver-sample/releases/tag/v2.3.0)) |
 | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
 | ![img.png](https://user-images.githubusercontent.com/8490118/103149917-b831ff80-47b1-11eb-85ac-d0e1328c8ad1.png)                                                         | ![img.png](https://user-images.githubusercontent.com/8490118/103149926-c2ec9480-47b1-11eb-810e-1e75ece3319f.png)                                                        |
 
