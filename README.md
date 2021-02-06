@@ -1,32 +1,29 @@
-<h1 align="center">Welcome to gitmoji-semver 👋</h1>
+<h1>gitmoji-semver</h1>
 
-<p align="center">
-  <a href="#" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
-  </a>
-  <a href="https://gitmoji.carloscuesta.me">
-    <img src="https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg?style=flat-square" alt="Gitmoji">
-  </a>
-  <a href="https://github.com/semantic-release/semantic-release">
-    <img src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg" alt="semantic-release">
-  </a>
-</p>
-
+<a href="#" target="_blank">
+  <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+</a>
+<a href="https://gitmoji.carloscuesta.me">
+  <img src="https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg?style=flat-square" alt="Gitmoji">
+</a>
+<a href="https://github.com/semantic-release/semantic-release">
+  <img src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg" alt="semantic-release">
+</a>
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->
 
 - [Features](#features)
-  - [Release template type](#release-template-type)
+    - [Release template type](#release-template-type)
 - [How to use in Mac](#how-to-use-in-mac)
-  - [Install](#install)
-  - [Usage](#usage)
+    - [Install](#install)
+    - [Usage](#usage)
 - [How to auto release ( using GithubActions. only 3 minutes )](#how-to-auto-release--using-githubactions-only-3-minutes-)
-  - [Step 1: Add `.semver.yml` to your Repository root](#step-1-add-semveryml-to-your-repository-root)
-  - [Step 2: Add `release.yml` to `.github/workflows/`](#step-2-add-releaseyml-to-githubworkflows)
-  - [Step 3: Commit and Push](#step-3-commit-and-push)
-    - [If you want to run locally](#if-you-want-to-run-locally)
+    - [Step 1: Add `.semver.yml` to your Repository root](#step-1-add-semveryml-to-your-repository-root)
+    - [Step 2: Add `release.yml` to `.github/workflows/`](#step-2-add-releaseyml-to-githubworkflows)
+    - [Step 3: Commit and Push](#step-3-commit-and-push)
+        - [If you want to run locally](#if-you-want-to-run-locally)
 - [References](#references)
 - [Author](#author)
 - [Show your support](#show-your-support)
@@ -35,9 +32,13 @@
 
 ## Features
 
-- :smile: generate [gitmojis.json](https://github.com/carloscuesta/gitmoji/blob/master/src/data/gitmojis.json) with semver field.
-- :smile: generate [semantic-release](https://github.com/semantic-release/semantic-release) setting files and release template.
-- :rocket: auto release by semver (semantic versioning) just by committing with gitmoji. ( [like this](https://github.com/nkmr-jp/gitmoji-semver-sample/releases) )
+- :smile:
+  generate [gitmojis.json](https://github.com/carloscuesta/gitmoji/blob/master/src/data/gitmojis.json)
+  with semver field.
+- :smile: generate [semantic-release](https://github.com/semantic-release/semantic-release) setting
+  files and release template.
+- :rocket: auto release by semver (semantic versioning) just by committing with
+  gitmoji. ( [like this](https://github.com/nkmr-jp/gitmoji-semver-sample/releases) )
 
 ### Release template type
 
@@ -50,7 +51,7 @@
 ### Install
 
 Require `curl`, `jq`, `yq` and `node` command.
-  
+
 ```sh
 brew install curl yq jq
 
@@ -76,7 +77,8 @@ make help
 
 ## How to auto release ( using GithubActions. only 3 minutes )
 
-The following steps will auto release with gitmoji using GithubActions. You only need to add two files, and you're ready to go. Feel free to try it out in your own Github Repository.
+The following steps will auto release with gitmoji using GithubActions. You only need to add two
+files, and you're ready to go. Feel free to try it out in your own Github Repository.
 
 ### Step 1: Add `.semver.yml` to your Repository root
 
@@ -182,14 +184,3 @@ act -P ubuntu-18.04=nektos/act-environments-ubuntu:18.04 # ※ 16GB docker image
 - [Semantic Versioning 2.0.0 | Semantic Versioning](https://semver.org/)
 - [Introduction to SemVer](https://blog.greenkeeper.io/introduction-to-semver-d272990c44f2)
 
-## Author
-
-👤 **nkmr-jp**
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
-
-***
-_This README was generated with ❤️
-by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
