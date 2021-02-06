@@ -30,7 +30,7 @@ jobs:
       - name: Generate semantic-release configs
         working-directory: ./gitmoji-semver
         run: |
-          make scaffold V=v3.0.0 F=../.semver.yml O=.. T=simple
+          make scaffold F=../.semver.yml O=..
       - name: Release
         working-directory: ./.release
         env:

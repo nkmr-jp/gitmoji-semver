@@ -5,7 +5,13 @@ const semverObj = JSON.parse(fs.readFileSync('./build/src/semver.json', 'utf8'))
 function run() {
     const res = {gitmojis: []};
     for (const v of gitmojisObj.gitmojis) {
-        v.semver = semver(v.name.replace(/-/g,'_'))
+        if (v.semver === null){
+            v.semver = "none"
+        }
+        let s = semver(v.name.replace(/-/g,'_'))
+        if (s !== null){
+            v.semver = s
+        }
         res.gitmojis.push(v)
     }
 
@@ -18,7 +24,7 @@ function semver(name) {
             return v
         }
     }
-    return 'none'
+    return null
 }
 
 run()

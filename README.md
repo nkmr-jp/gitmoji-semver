@@ -32,19 +32,13 @@
 
 ## Features
 
-- :smile:
-  generate [gitmojis.json](https://github.com/carloscuesta/gitmoji/blob/master/src/data/gitmojis.json)
-  with semver field.
 - :smile: generate [semantic-release](https://github.com/semantic-release/semantic-release) setting
   files and release template.
 - :rocket: auto release by semver (semantic versioning) just by committing with
   gitmoji. ( [like this](https://github.com/nkmr-jp/gitmoji-semver-sample/releases) )
 
-### Release template type
-
-| default ([example](https://github.com/nkmr-jp/gitmoji-semver-sample/releases/tag/v2.4.0)) | simple ([example](https://github.com/nkmr-jp/gitmoji-semver-sample/releases/tag/v2.3.0)) |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| ![img.png](https://user-images.githubusercontent.com/8490118/103149917-b831ff80-47b1-11eb-85ac-d0e1328c8ad1.png)                                                         | ![img.png](https://user-images.githubusercontent.com/8490118/103149926-c2ec9480-47b1-11eb-810e-1e75ece3319f.png)                                                        |
+### Release template type ( [example](https://github.com/nkmr-jp/gitmoji-semver-sample/releases/tag/v2.3.0) )
+![img.png](https://user-images.githubusercontent.com/8490118/103149926-c2ec9480-47b1-11eb-810e-1e75ece3319f.png) 
 
 ## How to use in Mac
 
@@ -90,23 +84,17 @@ example: [./.semver.yml](.semver.yml)
 # Release Branches
 branches: [ master, main ]
 
-# gitmoji semver settings (default is none)
+# gitmoji semver settings
+# You can override the default values to suit your project.
 semver:
-  major:
-    - boom      # Introduce breaking changes.
-  minor:
-    - sparkles  # Introduce new features.
-  patch:
-    - bug                   # Fix a bug.
-    - ambulance             # Critical hotfix.
-    - green_heart           # Fix CI Build.
-    - construction_worker   # Add or update CI build system.
-  none:
-    - memo      # Add or update documentation.
-
-  # Prevents it from appearing in Github's Release.
-  ignore:
-    - construction  # Work in progress.
+  #  minor:
+  #    - lipstick
+  #  patch:
+  #    - art
+  #  none: # gitmoji.json "semver": null is convert to none
+  #    - pencil2
+  ignore: # not add in release-template.hbs
+    - construction
 ```
 
 ### Step 2: Add `release.yml` to `.github/workflows/`
@@ -142,11 +130,11 @@ jobs:
           yq --version
       - name: Install gitmoji-semver
         run: |
-          git clone https://github.com/nkmr-jp/gitmoji-semver -b v1.7.0
+          git clone https://github.com/nkmr-jp/gitmoji-semver -b v2.0.0
       - name: Generate semantic-release configs
         working-directory: ./gitmoji-semver
         run: |
-          make scaffold V=v3.0.0 F=../.semver.yml O=.. M=simple
+          make scaffold F=../.semver.yml O=..
       - name: Release
         working-directory: ./.release
         env:
