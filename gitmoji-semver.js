@@ -27,4 +27,6 @@ function semver(name) {
     return null
 }
 
+// TODO: semver.jsonにフィールドを追加する
+
 run()

@@ -52,7 +52,7 @@ gen:
 
 	@echo
 	@echo
-	@echo "$(PURPLE)# GEN: 2. Add semver field$(RESET)"
+	@echo "$(PURPLE)# GEN: 2. Update semver field$(RESET)"
 	yq '.' $(SEMVER_FILE) > build/src/semver.json
 	node gitmoji-semver.js
 	cat build/dist/tmp.json | jq > build/dist/gitmojis.json
@@ -60,8 +60,8 @@ gen:
 
 	@echo
 	@echo
-	@echo "$(PURPLE)# GEN: 3. Generated!$(RESET)"
-	@echo "Generated gitmojis.json and gitmojis.yml with semver field"
+	@echo "$(PURPLE)# GEN: 4. Generated!$(RESET)"
+	@echo "Generated gitmojis.json and semver.json"
 	@echo "See ./build/dist"
 
 	@echo
