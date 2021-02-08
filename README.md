@@ -37,8 +37,10 @@
 - :rocket: auto release by semver (semantic versioning) just by committing with
   gitmoji. ( [like this](https://github.com/nkmr-jp/gitmoji-semver-sample/releases) )
 
-### Release template type ( [example](https://github.com/nkmr-jp/gitmoji-semver-sample/releases/tag/v2.3.0) )
-![img.png](https://user-images.githubusercontent.com/8490118/103149926-c2ec9480-47b1-11eb-810e-1e75ece3319f.png) 
+---
+
+### [Release example](https://github.com/nkmr-jp/gitmoji-semver-sample/releases/tag/v4.0.0) 
+![img.png](https://user-images.githubusercontent.com/8490118/107201108-e60a9500-6a3b-11eb-875b-76b0efe2622e.png) 
 
 ## How to use in Mac
 
