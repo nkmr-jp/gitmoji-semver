@@ -1,16 +1,21 @@
-<h1>gitmoji-semver</h1>
+<h1 align="center">😄 gitmoji-semver 🚀</h1>
 
+<p align="center">
+  <a href="#" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  </a>
+  <a href="https://gitmoji.carloscuesta.me">
+    <img src="https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg?style=flat-square" alt="Gitmoji">
+  </a>
+  <a href="https://github.com/semantic-release/semantic-release">
+    <img src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg" alt="semantic-release">
+  </a>
+</p>
+
+<p align="center">
 😆 Just commit with gitmoji, and you'll get auto versioning by semantic versioning and auto release to github.
+</p>
 
-<a href="#" target="_blank">
-  <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
-</a>
-<a href="https://gitmoji.carloscuesta.me">
-  <img src="https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg?style=flat-square" alt="Gitmoji">
-</a>
-<a href="https://github.com/semantic-release/semantic-release">
-  <img src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg" alt="semantic-release">
-</a>
 
 | Auto versioning and release to github ([example](https://github.com/nkmr-jp/gitmoji-semver-sample/releases/tag/v4.0.0)) |
 |--|
