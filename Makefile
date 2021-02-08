@@ -1,12 +1,10 @@
 # Options
-V=v3.0.0
+V=v3.2.0
 GITMOJI_VERSION=$(V)
 F=.semver.yml
 SEMVER_FILE=$(F)
 O=./
 OUT_DIR=$(O)
-T=""
-TEMPLATE_TYPE=$(T)
 
 BASE_FILE=https://raw.githubusercontent.com/carloscuesta/gitmoji/$(GITMOJI_VERSION)/src/data/gitmojis.json
 
@@ -40,10 +38,9 @@ help:
 	@echo "    T=<template type>	$(BLUE)Specify release template type 'default or simple'$(RESET)"
 	@echo
 	@echo "$(GREEN)Examples:$(RESET)"
-	@echo "    make gen V=v3.0.0 F=./.semver.yml"
+	@echo "    make gen F=./.semver.yml"
 	@echo "    make list"
-	@echo "    make scaffold V=v3.0.0 F=./.semver.yml O=./.playground"
-	@echo "    make scaffold V=v3.0.0 F=./.semver.yml O=./.playground T=simple"
+	@echo "    make scaffold F=./.semver.yml O=./.playground"
 	@echo
 
 # Generate gitmojis.json with semver field
@@ -55,17 +52,14 @@ gen:
 
 	@echo
 	@echo
-	@echo "$(PURPLE)# GEN: 2. Add semver field$(RESET)"
+	@echo "$(PURPLE)# GEN: 2. Update semver field$(RESET)"
 	yq '.' $(SEMVER_FILE) > build/src/semver.json
 	node gitmoji-semver.js
-	cat build/dist/tmp.json | jq > build/dist/gitmojis.json
-	yq -y '.' build/dist/gitmojis.json > build/dist/gitmojis.yml
-	rm build/dist/tmp.json
 
 	@echo
 	@echo
-	@echo "$(PURPLE)# GEN: 3. Generated!$(RESET)"
-	@echo "Generated gitmojis.json and gitmojis.yml with semver field"
+	@echo "$(PURPLE)# GEN: 4. Generated!$(RESET)"
+	@echo "Generated gitmojis.json and semver.json"
 	@echo "See ./build/dist"
 
 	@echo
@@ -91,17 +85,13 @@ list:
 scaffold: gen
 	@echo
 	@echo "$(PURPLE)# SCAFFOLD: Generate semantic-release setting files$(RESET)"
-	node gen-release-template.js $(TEMPLATE_TYPE)
+	node gen-release-template.js
 	mkdir -p $(OUT_DIR)/.release
 	cp -a ./semantic-release-template/. $(OUT_DIR)/.release
 	cp ./build/dist/release-template.hbs $(OUT_DIR)/.release
 	cp ./build/dist/gitmojis.json $(OUT_DIR)/.release
-	cp ./build/src/semver.json $(OUT_DIR)/.release
-ifeq ($(TEMPLATE_TYPE),simple)
-	cp $(OUT_DIR)/.release/commit-template-simple.hbs $(OUT_DIR)/.release/commit-template.hbs
-else
-	cp $(OUT_DIR)/.release/commit-template-default.hbs $(OUT_DIR)/.release/commit-template.hbs
-endif
+	cp ./build/dist/semver.json $(OUT_DIR)/.release
+
 	@echo
 	@echo "$(LIGHTPURPLE)🎉  Add semantic-release setting files$(RESET)"
 	@echo $(OUT_DIR)/.release
