@@ -44,7 +44,7 @@
 
 **Use GithubActions. Time required: 3 minutes**
 
-The following steps will auto release with gitmoji using GithubActions. You only need to add two files, and you're ready to go. Feel free to try it out in your own Github Repository.
+You only need to add two files, and you're ready to go. Feel free to try it out in your own Github Repository.
 
 ### Step 1: Add `.semver.yml` to your Repository root
 
