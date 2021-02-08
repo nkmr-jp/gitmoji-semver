@@ -31,7 +31,7 @@ function getSemverByName(name) {
 function genSemverJson() {
     const distGitmojisObj = JSON.parse(fs.readFileSync('./build/dist/gitmojis.json', 'utf8'));
     const res = {
-        branch: srcSemverObj.branch,
+        branches: srcSemverObj.branches,
         semver: {
             major: [],
             minor: [],
