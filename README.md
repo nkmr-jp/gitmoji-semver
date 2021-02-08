@@ -1,5 +1,7 @@
 <h1>gitmoji-semver</h1>
 
+😆 Just commit with gitmoji, and you'll get auto versioning by semantic versioning and auto release to github.
+
 <a href="#" target="_blank">
   <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
 </a>
@@ -10,66 +12,31 @@
   <img src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg" alt="semantic-release">
 </a>
 
+| Auto versioning and release to github ([example](https://github.com/nkmr-jp/gitmoji-semver-sample/releases/tag/v4.0.0)) |
+|--|
+| ![image](https://user-images.githubusercontent.com/8490118/107201108-e60a9500-6a3b-11eb-875b-76b0efe2622e.png) |
+
+
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->
 
 - [Features](#features)
-    - [Release template type](#release-template-type)
-- [How to use in Mac](#how-to-use-in-mac)
-    - [Install](#install)
-    - [Usage](#usage)
 - [How to auto release ( using GithubActions. only 3 minutes )](#how-to-auto-release--using-githubactions-only-3-minutes-)
-    - [Step 1: Add `.semver.yml` to your Repository root](#step-1-add-semveryml-to-your-repository-root)
-    - [Step 2: Add `release.yml` to `.github/workflows/`](#step-2-add-releaseyml-to-githubworkflows)
-    - [Step 3: Commit and Push](#step-3-commit-and-push)
-        - [If you want to run locally](#if-you-want-to-run-locally)
+  - [Step 1: Add `.semver.yml` to your Repository root](#step-1-add-semveryml-to-your-repository-root)
+  - [Step 2: Add `release.yml` to `.github/workflows/`](#step-2-add-releaseyml-to-githubworkflows)
+  - [Step 3: Commit and Push](#step-3-commit-and-push)
+- [How to use in Mac](#how-to-use-in-mac)
+  - [Install](#install)
+  - [Usage](#usage)
 - [References](#references)
-- [Author](#author)
-- [Show your support](#show-your-support)
 
 <!-- /code_chunk_output -->
 
 ## Features
 
-- :smile: generate [semantic-release](https://github.com/semantic-release/semantic-release) setting
-  files and release template.
-- :rocket: auto release by semver (semantic versioning) just by committing with
-  gitmoji. ( [like this](https://github.com/nkmr-jp/gitmoji-semver-sample/releases) )
-
----
-
-### [Release example](https://github.com/nkmr-jp/gitmoji-semver-sample/releases/tag/v4.0.0) 
-![img.png](https://user-images.githubusercontent.com/8490118/107201108-e60a9500-6a3b-11eb-875b-76b0efe2622e.png) 
-
-## How to use in Mac
-
-### Install
-
-Require `curl`, `jq`, `yq` and `node` command.
-
-```sh
-brew install curl yq jq
-
-yq --version
-# yq 2.10.1
-jq --version
-# jq-1.6
-node --version
-# v13.14.0 # Probably works in other versions too.
-
-# Install
-git clone https://github.com/nkmr-jp/gitmoji-semver
-```
-
-### Usage
-
-```sh
-cd ./gitmoji-semver
-make help
-```
-
-<img src="https://user-images.githubusercontent.com/8490118/103149906-93d62300-47b1-11eb-8aec-07db3127ab73.png" width=800>
+- :smile: generate [semantic-release](https://github.com/semantic-release/semantic-release) setting files and release template.
+- :rocket: auto release by semver (semantic versioning) just by committing with gitmoji. ( [like this](https://github.com/nkmr-jp/gitmoji-semver-sample/releases) )
 
 ## How to auto release ( using GithubActions. only 3 minutes )
 
@@ -150,19 +117,37 @@ jobs:
 
 ```sh
 git add .
-git commit -m ":construction_worker: Add Release workflow"
+git commit -m ":sparkles: Introduce new features."
 git push
 ```
 
 :tada: Done! Check out the Release Page in your Github Repository.
 
-#### If you want to run locally
+## How to use in Mac
 
-There will not be an actual Release. You can see how it works.
+### Install
+
+Require `curl`, `jq`, `yq` and `node` command.
 
 ```sh
-brew install act
-act -P ubuntu-18.04=nektos/act-environments-ubuntu:18.04 # ※ 16GB docker image
+brew install curl yq jq
+
+yq --version
+# yq 2.10.1
+jq --version
+# jq-1.6
+node --version
+# v13.14.0 # Probably works in other versions too.
+
+# Install
+git clone https://github.com/nkmr-jp/gitmoji-semver
+```
+
+### Usage
+
+```sh
+cd ./gitmoji-semver
+make help
 ```
 
 ## References
