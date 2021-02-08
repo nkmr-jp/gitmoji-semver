@@ -55,8 +55,6 @@ gen:
 	@echo "$(PURPLE)# GEN: 2. Update semver field$(RESET)"
 	yq '.' $(SEMVER_FILE) > build/src/semver.json
 	node gitmoji-semver.js
-	cat build/dist/tmp.json | jq > build/dist/gitmojis.json
-	rm build/dist/tmp.json
 
 	@echo
 	@echo
@@ -92,7 +90,7 @@ scaffold: gen
 	cp -a ./semantic-release-template/. $(OUT_DIR)/.release
 	cp ./build/dist/release-template.hbs $(OUT_DIR)/.release
 	cp ./build/dist/gitmojis.json $(OUT_DIR)/.release
-	cp ./build/src/semver.json $(OUT_DIR)/.release
+	cp ./build/dist/semver.json $(OUT_DIR)/.release
 
 	@echo
 	@echo "$(LIGHTPURPLE)🎉  Add semantic-release setting files$(RESET)"
