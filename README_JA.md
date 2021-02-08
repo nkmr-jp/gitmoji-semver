@@ -15,11 +15,12 @@
 </p>
 
 <p align="center">
-😆 Just commit with gitmoji, and you'll get auto versioning by semantic versioning and auto release to github.
+😆 gitmojiでコミットするだけで、セマンティックバージョニングによるオートバージョニングとgithubへのオートリリースが可能になります。
 </p>
 
 
-| Auto versioning and release to github ([example](https://github.com/nkmr-jp/gitmoji-semver-sample/releases/tag/v4.0.0)) |
+
+| 自動バージョニングとgithubへのリリース ([example](https://github.com/nkmr-jp/gitmoji-semver-sample/releases/tag/v4.0.0)) |
 |--|
 | ![image](https://user-images.githubusercontent.com/8490118/107201108-e60a9500-6a3b-11eb-875b-76b0efe2622e.png) |
 
@@ -28,28 +29,30 @@
 
 <!-- code_chunk_output -->
 
-- [Features](#features)
-- [How to auto release ( using GithubActions. only 3 minutes )](#how-to-auto-release--using-githubactions-only-3-minutes-)
-  - [Step 1: Add `.semver.yml` to your Repository root](#step-1-add-semveryml-to-your-repository-root)
-  - [Step 2: Add `release.yml` to `.github/workflows/`](#step-2-add-releaseyml-to-githubworkflows)
-  - [Step 3: Commit and Push](#step-3-commit-and-push)
-- [How to use in Mac](#how-to-use-in-mac)
-  - [Install](#install)
-  - [Usage](#usage)
-- [References](#references)
+- [特徴](#特徴)
+- [自動リリースの方法 (GithubActionsを使います。所要時間3分)](#自動リリースの方法-githubactionsを使います所要時間3分)
+  - [手順 1: `.semver.yml` をリポジトリのルートに追加](#手順-1-semveryml-をリポジトリのルートに追加)
+  - [手順 2: `release.yml` を `.github/workflows/` に追加](#手順-2-releaseyml-を-githubworkflows-に追加)
+  - [手順 3: コミットしてプッシュ](#手順-3-コミットしてプッシュ)
+- [Macでの使用方法 (オプション)](#macでの使用方法-オプション)
+  - [インストール](#インストール)
+  - [使い方](#使い方)
+- [参照](#参照)
 
 <!-- /code_chunk_output -->
 
-## Features
+## 特徴
 
-- :smile: generate [semantic-release](https://github.com/semantic-release/semantic-release) setting files and release template.
-- :rocket: auto release by semver (semantic versioning) just by committing with gitmoji. ( [like this](https://github.com/nkmr-jp/gitmoji-semver-sample/releases) )
+- :smile: [semantic-release](https://github.com/semantic-release/semantic-release) の設定ファイルやテンプレート生成。
+- :rocket: gitmojiを使ったコミットをするだけで semver (semantic versioning) による自動バージョニングとリリース. ( [like this](https://github.com/nkmr-jp/gitmoji-semver-sample/releases) )
 
-## How to auto release ( using GithubActions. only 3 minutes )
+## 自動リリースの方法 (GithubActionsを使います。所要時間3分)
 
-The following steps will auto release with gitmoji using GithubActions. You only need to add two files, and you're ready to go. Feel free to try it out in your own Github Repository.
+以下の手順でGithubActionsを使ってgitmojiで自動リリースします。
+ファイルを2つ追加するだけで、準備は完了です。
+自分のGithubリポジトリで気軽に試してみてください。
 
-### Step 1: Add `.semver.yml` to your Repository root
+### 手順 1: `.semver.yml` をリポジトリのルートに追加
 
 example: [./.semver.yml](.semver.yml)
 
@@ -72,7 +75,7 @@ semver:
     - construction
 ```
 
-### Step 2: Add `release.yml` to `.github/workflows/`
+### 手順 2: `release.yml` を `.github/workflows/` に追加
 
 ```yml
 # .github/workflows/release.yml
@@ -119,7 +122,7 @@ jobs:
           npx semantic-release
 ```
 
-### Step 3: Commit and Push
+### 手順 3: コミットしてプッシュ
 
 ```sh
 git add .
@@ -127,13 +130,13 @@ git commit -m ":sparkles: Introduce new features."
 git push
 ```
 
-:tada: Done! Check out the Release Page in your Github Repository.
+:tada: 完了しました。Githubリポジトリのリリースページを確認してみましょう。
 
-## How to use in Mac (option)
+## Macでの使用方法 (オプション)
 
-### Install
+### インストール
 
-Require `curl`, `jq`, `yq` and `node` command.
+`curl`, `jq`, `yq` と `node` コマンドが必要です。
 
 ```sh
 brew install curl yq jq
@@ -149,14 +152,14 @@ node --version
 git clone https://github.com/nkmr-jp/gitmoji-semver
 ```
 
-### Usage
+### 使い方
 
 ```sh
 cd ./gitmoji-semver
 make help
 ```
 
-## References
+## 参照
 
 - [Add a "semver" field for each emoji #429](https://github.com/carloscuesta/gitmoji/issues/429)
 - [gitmoji | An emoji guide for your commit messages](https://gitmoji.carloscuesta.me/)
