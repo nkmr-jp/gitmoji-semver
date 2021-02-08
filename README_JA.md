@@ -29,8 +29,7 @@
 
 <!-- code_chunk_output -->
 
-- [特徴](#特徴)
-- [自動リリースの方法 (GithubActionsを使います。所要時間3分)](#自動リリースの方法-githubactionsを使います所要時間3分)
+- [自動リリースの方法](#自動リリースの方法)
   - [手順 1: `.semver.yml` をリポジトリのルートに追加](#手順-1-semveryml-をリポジトリのルートに追加)
   - [手順 2: `release.yml` を `.github/workflows/` に追加](#手順-2-releaseyml-を-githubworkflows-に追加)
   - [手順 3: コミットしてプッシュ](#手順-3-コミットしてプッシュ)
@@ -41,14 +40,9 @@
 
 <!-- /code_chunk_output -->
 
-## 特徴
+## 自動リリースの方法
 
-- :smile: [semantic-release](https://github.com/semantic-release/semantic-release) の設定ファイルやテンプレート生成。
-- :rocket: gitmojiを使ったコミットをするだけで semver (semantic versioning) による自動バージョニングとリリース. ( [like this](https://github.com/nkmr-jp/gitmoji-semver-sample/releases) )
-
-## 自動リリースの方法 (GithubActionsを使います。所要時間3分)
-
-以下の手順でGithubActionsを使ってgitmojiで自動リリースします。
+**GithubActionsを使います。所要時間3分**
 ファイルを2つ追加するだけで、準備は完了です。
 自分のGithubリポジトリで気軽に試してみてください。
 
@@ -130,7 +124,7 @@ git commit -m ":sparkles: Introduce new features."
 git push
 ```
 
-:tada: 完了しました。Githubリポジトリのリリースページを確認してみましょう。
+:tada: 終了です。Githubリポジトリのリリースページを確認してみましょう。
 
 ## Macでの使用方法 (オプション)
 

@@ -40,12 +40,9 @@
 
 <!-- /code_chunk_output -->
 
-## Features
+## How to auto release
 
-- :smile: generate [semantic-release](https://github.com/semantic-release/semantic-release) setting files and release template.
-- :rocket: auto release by semver (semantic versioning) just by committing with gitmoji. ( [like this](https://github.com/nkmr-jp/gitmoji-semver-sample/releases) )
-
-## How to auto release ( using GithubActions. only 3 minutes )
+**Use GithubActions. Time required: 3 minutes**
 
 The following steps will auto release with gitmoji using GithubActions. You only need to add two files, and you're ready to go. Feel free to try it out in your own Github Repository.
 
