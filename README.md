@@ -28,12 +28,11 @@
 
 <!-- code_chunk_output -->
 
-- [Features](#features)
-- [How to auto release ( using GithubActions. only 3 minutes )](#how-to-auto-release--using-githubactions-only-3-minutes-)
+- [How to auto release](#how-to-auto-release)
   - [Step 1: Add `.semver.yml` to your Repository root](#step-1-add-semveryml-to-your-repository-root)
   - [Step 2: Add `release.yml` to `.github/workflows/`](#step-2-add-releaseyml-to-githubworkflows)
   - [Step 3: Commit and Push](#step-3-commit-and-push)
-- [How to use in Mac](#how-to-use-in-mac)
+- [How to use in Mac (option)](#how-to-use-in-mac-option)
   - [Install](#install)
   - [Usage](#usage)
 - [References](#references)
@@ -44,7 +43,7 @@
 
 **Use GithubActions. Time required: 3 minutes**
 
-The following steps will auto release with gitmoji using GithubActions. You only need to add two files, and you're ready to go. Feel free to try it out in your own Github Repository.
+You only need to add two files, and you're ready to go. Feel free to try it out in your own Github Repository.
 
 ### Step 1: Add `.semver.yml` to your Repository root
 
