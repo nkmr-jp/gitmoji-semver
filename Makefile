@@ -1,5 +1,5 @@
 # Options
-V=v3.2.0
+V=v3.8.0
 GITMOJI_VERSION=$(V)
 F=.semver.yml
 SEMVER_FILE=$(F)
