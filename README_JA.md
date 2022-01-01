@@ -102,7 +102,7 @@ jobs:
           yq --version
       - name: Install gitmoji-semver
         run: |
-          git clone https://github.com/nkmr-jp/gitmoji-semver -b v2.0.0
+          git clone https://github.com/nkmr-jp/gitmoji-semver -b v2.0.1
       - name: Generate semantic-release configs
         working-directory: ./gitmoji-semver
         run: |
