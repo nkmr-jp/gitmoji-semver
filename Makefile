@@ -1,12 +1,12 @@
 # Options
-V=v3.10.0
+V=v3.13.4
 GITMOJI_VERSION=$(V)
 F=.semver.yml
 SEMVER_FILE=$(F)
 O=./
 OUT_DIR=$(O)
 
-BASE_FILE=https://raw.githubusercontent.com/carloscuesta/gitmoji/$(GITMOJI_VERSION)/src/data/gitmojis.json
+BASE_FILE=https://github.com/carloscuesta/gitmoji/blob/$(GITMOJI_VERSION)/packages/gitmojis/src/gitmojis.json
 
 # See: https://gist.github.com/rsperl/d2dfe88a520968fbc1f49db0a29345b9
 # define standard colors

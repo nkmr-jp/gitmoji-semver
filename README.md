@@ -82,7 +82,7 @@ on:
 jobs:
   release:
     name: Release
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -101,7 +101,7 @@ jobs:
           yq --version
       - name: Install gitmoji-semver
         run: |
-          git clone https://github.com/nkmr-jp/gitmoji-semver -b v2.0.1
+          git clone https://github.com/nkmr-jp/gitmoji-semver -b v2.0.3
       - name: Generate semantic-release configs
         working-directory: ./gitmoji-semver
         run: |
