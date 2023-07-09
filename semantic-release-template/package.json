@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "dependencies": {},
   "devDependencies": {
-    "semantic-release": "^17.2.1",
-    "semantic-release-gitmoji": "^1.4.1"
+    "semantic-release": "^21.0.7",
+    "semantic-release-gitmoji": "^1.6.4"
   }
 }
